@@ -1,0 +1,50 @@
+
+<view animation="{{animationData}}" style="" >
+<i-card style="margin:20px;"  bindtap="tosearchword" title="" extra="查单词" thumb="https://images.pexels.com/photos/3769697/pexels-photo-3769697.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    <view style="font-size:0.8em" slot="content">在线免费查单词，可获取单词发音、释义及例句，无次数限制。</view>
+    <!-- <view slot="footer">尾部内容</view> -->
+</i-card>
+</view>
+
+
+<view animation="{{animationData}}"  >
+    <i-card animation="{{animationData}}"  style="margin:20px" bindtap="totranslate" title="" extra="翻译" thumb="https://images.pexels.com/photos/267669/pexels-photo-267669.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+        <view style="font-size:0.8em" slot="content">支持28种语言互译。</view>
+        <!-- <view slot="footer">尾部内容</view> -->
+    </i-card>
+</view>
+
+<view animation="{{animationData}}"  >
+    <i-card animation="{{animationData}}"  style="margin:20px" bindtap="tomap" title="" extra="导航" thumb="https://images.pexels.com/photos/68704/pexels-photo-68704.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+        <view style="font-size:0.8em" slot="content">提供路线规划，选择出发点和目的地，生成推荐驾车、公交、步行路线规划。</view>
+        <!-- <view slot="footer">尾部内容</view> -->
+    </i-card>
+</view>
+
+<view animation="{{animationData}}" style="" >
+<i-card style="margin:20px;"  bindtap="togame" title="" extra="游戏" thumb="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    <view style="font-size:0.8em" slot="content">有趣益智小游戏</view>
+</i-card>
+</view>
+
+<!-- <view animation="{{animationData}}"  >
+<i-card style="margin:20px" bindtap="todailysentence" title="" extra="每日一句" thumb="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    <view style="font-size:0.8em" slot="content">每日更新一句英文美句，提供中文翻译，并可播放音频，点击日期两边箭头可查看往期内容。</view>
+</i-card>
+</view> -->
+
+<view animation="{{animationData}}"  >
+<i-card style="margin:20px" bindtap="torainbowpi" title="" extra="彩虹屁" thumb="https://images.pexels.com/photos/2013809/pexels-photo-2013809.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    <view style="font-size:0.8em" slot="content">好多好多彩虹 屁</view>
+    <!-- <view slot="footer">尾部内容</view> -->
+</i-card>
+</view>
+
+
+<view animation="{{animationData}}"  >
+    <i-card animation="{{animationData}}"  style="margin:20px" bindtap="toadvice" title="" extra="提建议" thumb="https://images.pexels.com/photos/255527/pexels-photo-255527.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+        <view style="font-size:0.8em" slot="content">请给我们提一些建议和意见</view>
+        <!-- <view slot="footer">尾部内容</view> -->
+    </i-card>
+</view>
+

@@ -1,0 +1,49 @@
+{
+  "cloud":true,
+  "plugins": {
+    "routePlan": {
+      "version": "1.0.8",
+      "provider": "wx50b5593e81dd937a"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+
+  "pages":[ 
+    "pages/main/main",
+    "pages/searchword/searchword",
+    "pages/dailysentence/dailysentence",
+    "pages/translate/translate",
+    "pages/index/index",
+    "pages/advice/advice",
+    "pages/map/map",
+    "pages/rainbowpi/rainbowpi",
+    "pages/game/game",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#0000cF", 
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true ,
+    "backgroundTextStyle": "dark" 
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+
+  "usingComponents": {
+    "i-button": "./dist/button/index",
+    "i-card": "./dist/card/index",
+    "i-icon": "./dist/icon/index",
+    "i-action-sheet": "./dist/action-sheet/index",
+    "i-toast": "./dist/toast/index"
+
+
+    
+}
+
+
+}

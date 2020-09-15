@@ -1,0 +1,61 @@
+<!-- 
+查单词页面  
+text相当于span
+view相当于div
+chexkbox 复选框
+ -->
+ <!-- 头部 -->
+<view class="headtitle" style="border-bottom:0px solid #ccc; display: flex; padding:5px 0 ">
+  <view style=" flex: 3;text-align:center; ">英文</view>
+  <view style=" flex: 1;text-align:center; ">
+  <i-icon bindtap="searchfun" type="enter"  size="26" color="#000" />
+  </view>
+  <view style=" flex: 3;text-align:center; ">中文</view>
+</view>
+    <!-- <view class="page-section-title">这是一个可以自动聚焦的textarea</view> -->
+<!-- 输入框 -->
+<view>
+  <view class="textarea-wrp" style="padding: 10px;background-color: #fff;border:1px solid #ccc;box-shadow: 0px 2px 2px rgba(0,0,0,0.17);">
+    <textarea placeholder-class="place-holder" placeholder="请输入要查找的单词，输入完成后，点击输入框外任意区域即可自动进行查找" bindconfirm="searchfun" bindblur="searchfun" model:value="{{originalData}}" auto-focus="true" style="height: 4em;margin-right:60px" />
+  </view>
+</view>
+
+<!-- 搜索和取消按钮 -->
+<view style="position: absolute;top:52px;right:5px;z-index: 5;">
+    <!-- <icon  bindtap="searchfun" style="margin-right:10px"  type="search" size="30" color="blue"/> -->
+    <!-- <icon bindtap="clearfun" type="cancel" size="30"></icon> -->
+</view>
+
+<!-- 原文发音和词性 -->
+<view style="font-size:16px;margin-top:10px;font-weight:700">释义</view>
+<view style="padding:0px 5px 20px 5px">
+  <view style="font-size:20px;font-family:'楷体';font-weight:700" wx:if="{{result.phoneticEnglandUrl !=null}}">{{result.original}}</view>
+  <view>
+   <view style="display: inline;" wx:if="{{result.phoneticEnglandUrl !=null}}" bindtap="paly"  data-url="{{result.phoneticEnglandUrl}}">
+   英<i-icon type="systemprompt" size="18" /></view>
+   <view  style="display: inline;margin-left:15px" wx:if="{{result.phoneticAmericanUrl !=null}}" bindtap="paly"  data-url="{{result.phoneticAmericanUrl}}">美<i-icon size="18" type="systemprompt" /></view>
+  </view>
+  <!-- 词性 -->
+  <view >
+    <view wx:for="{{result.wordPartListMap}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+      <text style="margin-right:5px">{{item.a}} </text>
+      <text >{{item.b}}</text>
+    </view>
+  </view>
+</view>
+
+
+<!-- 例句 -->
+<view style="font-size:1.0em;font-weight:700">例句</view>
+<view style="font-size:14px;padding: 0 5px 10px 5px" wx:if="{{result.exampleListMap !=null}}">
+  <view wx:for="{{result.exampleListMap}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+    <view style="margin-top:10px;font-weight:600">{{item.a}} </view>
+    <view >{{item.b}}</view>
+  </view>
+</view>
+
+
+<!-- <audio src="{{result.phoneticEnglandUrl}}">111</audio> -->
+
+
+<!-- <text>pages/foreign/foreign.wxml</text> -->

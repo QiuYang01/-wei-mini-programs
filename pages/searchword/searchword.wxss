@@ -1,0 +1,26 @@
+/* pages/foreign/foreign.wxss */
+.searinput {
+  border: 2px solid #ccc;
+  margin: 10px 0;
+}
+.searbutton {
+  border: 2px solid yellow;
+}
+
+.page-section-title{
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.headtitle {
+  font-size: 20px;
+  font-weight: 500;
+  
+}
+/* 输入框中placehold样式 */
+.place-holder {
+  font-size: 12px;
+  font-weight:400!important;
+  }

@@ -1,0 +1,6 @@
+<!--pages/advice/advice.wxml-->
+<view class="section">
+  <textarea bindblur="bindTextAreaBlur" model:value="{{advice}}" placeholder="请输入您的建议" class="advice" />
+  <textarea bindblur="bindTextAreaBlur" model:value="{{username}}" placeholder="请输入您的昵称" class="username" />
+    <button disabled="{{isdisable}}" bindtap="submit"  style="width: 80%;margin: 0 auto;margin-top:10vh" class="but" type="primary" >提交</button>
+</view>

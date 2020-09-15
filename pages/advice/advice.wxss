@@ -1,0 +1,23 @@
+/* pages/advice/advice.wxss */
+.advice {
+  padding: 10px 4px;
+  height: 40vh;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5vh;
+}
+.username {
+  padding: 10px 4px;
+  height: 10vh;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5vh;
+}
+.but {
+  font-size: 1.0em;
+  margin-top: 5vh;
+}

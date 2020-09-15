@@ -1,0 +1,15 @@
+<!--pages/chinese/chinese.wxml-->
+<view animation="{{animationData}}" >
+  <view class="big" style="text-align:center;width:100%;height:100vh;background: #ccc url({{info.picture4}})  no-repeat;background-size: contain;">
+    <view  style="font-size:22px;margin-bottom:240px">
+    <i-icon bindtap="goback" style="font-size:1.2em;color:yellow" type="return" size="26"/>
+      {{info.dateline}} 
+      <i-icon bindtap="gohead" style="font-size:1.2em;color:yellow" type="enter" size="26"/>
+    </view>
+    <view style="color:#DD2255;font-weight:700;font-size:20px;margin-bottom:120px;font-family:'Arial Rounded'" >
+    {{info.content}}
+    </view>
+    <view style="font-size:18px;margin-bottom:20px;font-weight:700;font-family:'楷体'">{{info.note}}</view>
+    <i-icon bindtap="paly" data-url="{{info.tts}}" style="width:50px;height:50px;position: absolute;right:20px;bottom:40px" type="systemprompt_fill" size="50" />
+  </view>
+</view>

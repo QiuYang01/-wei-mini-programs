@@ -1,0 +1,35 @@
+/* pages/rainbowpi/rainbowpi.wxss */
+.rainbowcentext {
+  border: 2px solid #ccc;
+  /* height: 15vh; */
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5vh;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+.rainbowtitle {
+  font-weight: 700;
+  margin-top: 70px;
+  text-align:center;
+  font-size:1.4em;
+  box-shadow: 0 -10px 0 red,
+              0 -20px 0 orange ,
+              0 -30px 0 yellow,
+              0 -40px 0 green,
+              0 -50px 0 cyan,
+              0 -60px 0 blue ,
+              0 -70px 0 purple;
+  border-radius: 10px;
+}
+.buttons {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3vh;
+  text-align: center;
+}
+.button {
+  border: 1px solid #ccc;
+  margin: 10px;
+}

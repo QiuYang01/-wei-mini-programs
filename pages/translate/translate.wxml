@@ -1,0 +1,42 @@
+<view class="bigger">
+ <view class="left">
+   <picker style="min-height:10vh;line-height:10vh" bindchange="bindPickerChange1" value="{{index}}" range-key="name" range="{{objectArray}}">
+    <view class="picker">
+      <view style=";border:1px solid #ccc;border-radius:10px">{{originlang}}<i-icon type="unfold" /></view>
+    </view>
+  </picker>
+  <i-icon type="unfold" size="30"/>
+  <picker style="min-height:10vh;line-height:10vh" bindchange="bindPickerChange2" value="{{index}}" range-key="name" range="{{objectArray}}">
+    <view class="picker">
+      <!-- {{goallang}}{{array[index]}} -->
+       <view style=";border:1px solid #ccc;border-radius:10px">{{goallang}}<i-icon type="unfold" /></view>
+    </view>
+  </picker>
+
+ </view>
+
+
+
+ <view class="right">
+ <textarea placeholder-class="place-holder" placeholder="请输入" bindconfirm="translate" bindblur="translate" model:value="{{originword}}" auto-focus="true" style="height: 10vh;width:80%;border:1px solid red;border-radius:10px;padding:0 10px" />
+   <view bindtap="translate" style="text-align:center"><i-icon type="unfold"  size="30"/></view>
+  <textarea placeholder-class="place-holder" placeholder="翻译结果显示区" style="height: 60vh;width:80%;border:1px solid red;border-radius:10px;padding:0 10px" disabled="true" model:value="{{result}}" />
+
+<!-- <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{years}}" wx:key="{{years}}" style="line-height: 50px; text-align: center;">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{months}}" wx:key="{{months}}" style="line-height: 50px; text-align: center;">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{days}}" wx:key="{{days}}" style="line-height: 50px; text-align: center;">{{item}}日</view>
+      </picker-view-column>
+    </picker-view> -->
+
+
+
+
+
+ </view>
+</view>

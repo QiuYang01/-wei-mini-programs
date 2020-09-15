@@ -1,0 +1,10 @@
+<view class="rainbowtitle">彩虹屁</view>
+<view class="rainbowcentext" auto-height="true">
+{{rainbowceotext}}
+
+</view>
+<view class="buttons">
+      <button class="button" bindtap="copy" size="mini">复制</button>
+      <button class="button" bindtap="getrainbowpi" size="mini">换一句</button>
+
+</view>
