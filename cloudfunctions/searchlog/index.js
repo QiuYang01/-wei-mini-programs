@@ -3,9 +3,6 @@ const cloud = require('wx-server-sdk')
 
 cloud.init()
 
-
-
-
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext();
@@ -16,7 +13,7 @@ exports.main = async (event, context) => {
     return searchlogCollection.add({
       data:{
        word:event.word,
-       openid:wxContext.APPID,
+       openid:wxContext.APPID, 
        time:new Date()
       }
      })
@@ -26,7 +23,7 @@ exports.main = async (event, context) => {
       msg:"error!"
     }
   }
-  //调用数据库添加搜索记录结束
+  //调用数据库添加搜索记录 结束
 
   // return {
   //   searchlogCollection,
