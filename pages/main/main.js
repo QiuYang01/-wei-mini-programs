@@ -7,6 +7,11 @@ Page({
   data: {
     animationData: {} //动画
   },
+  tostartword:function(){
+    wx.navigateTo({
+      url: '../usermain/usermain'
+    })
+  },
   tosearchword:function(){
     wx.navigateTo({
       url: '../searchword/searchword'
@@ -61,24 +66,24 @@ Page({
    */
   onShow: function () {
     var animation = wx.createAnimation({
-      duration: 1000,
+      duration: 800,
       timingFunction: 'linear',
     })
     this.animation = animation
     //scale 缩放
     // animation.rotateZ(0).step();
-   // animation.opacity(0).translate(-50).step()
-   // animation.scale(1,1).rotate(360).opacity().step()
+  //  animation.opacity(0).translate(-50).step()
+  //  animation.scale(1,1).rotate(360).opacity().step()
     this.setData({
       animationData:animation.export()
     })
     setTimeout(function() {
-      //animation.opacity(1).translate(0).step();
+      // animation.opacity(1).translate(0).step();
       // animation.rotateZ(360).step();
       this.setData({
         animationData:animation.export()
       })
-    }.bind(this), 1000)
+    }.bind(this), 800)
   },
 
   /**

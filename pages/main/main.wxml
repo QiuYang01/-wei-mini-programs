@@ -1,5 +1,12 @@
 
 <view animation="{{animationData}}" style="" >
+<i-card style="margin:20px;"  bindtap="tostartword" title="" extra="我的收藏" thumb="https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    <view style="font-size:0.8em" slot="content">查单词后收藏的单词在这里面显示。</view>
+    <!-- <view slot="footer">尾部内容</view> -->
+</i-card>
+</view>
+
+<view animation="{{animationData}}" style="" >
 <i-card style="margin:20px;"  bindtap="tosearchword" title="" extra="查单词" thumb="https://images.pexels.com/photos/3769697/pexels-photo-3769697.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
     <view style="font-size:0.8em" slot="content">在线免费查单词，可获取单词发音、释义及例句，无次数限制。</view>
     <!-- <view slot="footer">尾部内容</view> -->
@@ -21,11 +28,11 @@
     </i-card>
 </view>
 
-<view animation="{{animationData}}" style="" >
+<!-- <view animation="{{animationData}}" style="" >
 <i-card style="margin:20px;"  bindtap="togame" title="" extra="游戏" thumb="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
     <view style="font-size:0.8em" slot="content">有趣益智小游戏</view>
 </i-card>
-</view>
+</view> -->
 
 <!-- <view animation="{{animationData}}"  >
 <i-card style="margin:20px" bindtap="todailysentence" title="" extra="每日一句" thumb="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">

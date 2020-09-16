@@ -4,6 +4,7 @@ text相当于span
 view相当于div
 chexkbox 复选框
  -->
+ <van-notice-bar left-icon="volume-o" text="在这里进行查词，输入英文单词，点击搜索图标进行搜索，完成后可点击五角星收藏，点击时钟图标可查看历史搜索记录" />
  <!-- 头部 -->
 <view class="headtitle" style="border-bottom:0px solid #ccc; display: flex; padding:5px 0 ">
   <view style=" flex: 3;text-align:center; ">英文</view>
@@ -12,24 +13,40 @@ chexkbox 复选框
   </view>
   <view style=" flex: 3;text-align:center; ">中文</view>
 </view>
-    <!-- <view class="page-section-title">这是一个可以自动聚焦的textarea</view> -->
 <!-- 输入框 -->
 <view>
-  <view class="textarea-wrp" style="padding: 10px;background-color: #fff;border:1px solid #ccc;box-shadow: 0px 2px 2px rgba(0,0,0,0.17);">
-    <textarea placeholder-class="place-holder" placeholder="请输入要查找的单词，输入完成后，点击输入框外任意区域即可自动进行查找" bindconfirm="searchfun" bindblur="searchfun" model:value="{{originalData}}" auto-focus="true" style="height: 4em;margin-right:60px" />
+  <view style="display:flex;padding: 10px ;background-color: #fff;border:1px solid #ccc;box-shadow: 0px 2px 2px rgba(0,0,0,0.17);">
+    <textarea placeholder-class="place-holder" placeholder="请输入要查找的单词" bindconfirm="searchfun"  model:value="{{originalData}}" style="height:4em;margin-right:0px" />
+    <!-- 搜索和历史记录按钮 -->
+    <view style="z-index: 5;text-align:right">
+        <i-icon  bindtap="searchfun" style="position:relative;top:-8px;" type="search" size="30" color="blue" />
+        <i-icon bindtap="grawershow" style="position:relative;bottom:-8px;" size="30" type="time_fill" color="blue" />
+    </view>
   </view>
 </view>
+ <!-- 遮罩层显示搜索记录 -->
+<i-drawer mask="false" style="max-height:100vh;overflow:hidden;z-index:60000;" mode="right" visible="{{drawer}}" bind:close="grawershow">
+    <view style="font-size:1.0em;font-weight:500;background:#fff;padding:10px">搜索记录</view>
+    <view  wx:for="{{searchlog}}" wx:for-index="idx" wx:for-item="log" wx:key="idx" style="overflow: auto;background:#fff;border:1px solid #ccc;padding:5px">
+      <view bindtap="getlogwordseach" style="dispaly:flex;align-content: space-between;" data-word='{{log.word}}'>
+        <view >{{log.word}}</view>
+        <!-- <view  style="text-align:right;font-size:0.8em;font-weight:300">{{log.time}}</view> -->
+      </view>
+    </view>
+</i-drawer>
 
-<!-- 搜索和取消按钮 -->
-<view style="position: absolute;top:52px;right:5px;z-index: 5;">
-    <!-- <icon  bindtap="searchfun" style="margin-right:10px"  type="search" size="30" color="blue"/> -->
-    <!-- <icon bindtap="clearfun" type="cancel" size="30"></icon> -->
-</view>
+
 
 <!-- 原文发音和词性 -->
 <view style="font-size:16px;margin-top:10px;font-weight:700">释义</view>
+<!-- <text bindtap="getallstartword">获取</text> -->
 <view style="padding:0px 5px 20px 5px">
-  <view style="font-size:20px;font-family:'楷体';font-weight:700" wx:if="{{result.phoneticEnglandUrl !=null}}">{{result.original}}</view>
+  <view style="font-size:20px;font-family:'楷体';font-weight:700" wx:if="{{result.phoneticEnglandUrl !=null}}">
+    {{result.original}}
+    <!-- 收藏和取消 -->
+    <i-icon style="float:right;margin-right:10px" wx:if="{{checkhasstart==0}}" type="collection" bindtap="startword" size="28"/> 
+    <i-icon style="float:right;margin-right:10px" wx:else type="collection_fill"  size="28" color="#80848f"/>
+  </view>
   <view>
    <view style="display: inline;" wx:if="{{result.phoneticEnglandUrl !=null}}" bindtap="paly"  data-url="{{result.phoneticEnglandUrl}}">
    英<i-icon type="systemprompt" size="18" /></view>

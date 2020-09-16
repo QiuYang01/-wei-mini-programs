@@ -7,23 +7,34 @@ cloud.init()
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext();
   const db = cloud.database();
-  const searchlogCollection = db.collection('searchlog');
+  const  searchlogCollection = db.collection('searchlog');
+  
   //调用数据库添加搜索记录
   if(event.url == "savesearchlog"){
-    return searchlogCollection.add({
+    return await searchlogCollection.add({
       data:{
        word:event.word,
-       openid:wxContext.APPID, 
+       openid:wxContext.OPENID, 
        time:new Date()
       }
      })
   }
+
+   //调用数据库获取用户的搜索记录
+  else if(event.url == "getsearchlog"){
+    return await searchlogCollection.where({
+      openid:wxContext.OPENID,
+    }).orderBy('time', 'desc').limit(14).get();
+  }
+
   else {
     return {
       msg:"error!"
     }
   }
-  //调用数据库添加搜索记录 结束
+
+
+  //
 
   // return {
   //   searchlogCollection,

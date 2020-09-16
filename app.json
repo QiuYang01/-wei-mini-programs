@@ -22,7 +22,8 @@
     "pages/map/map",
     "pages/rainbowpi/rainbowpi",
     "pages/game/game",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/usermain/usermain"
   ],
   "window":{
     "navigationBarBackgroundColor": "#0000cF", 
@@ -31,7 +32,6 @@
     "enablePullDownRefresh": true ,
     "backgroundTextStyle": "dark" 
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
 
   "usingComponents": {
@@ -39,10 +39,23 @@
     "i-card": "./dist/card/index",
     "i-icon": "./dist/icon/index",
     "i-action-sheet": "./dist/action-sheet/index",
-    "i-toast": "./dist/toast/index"
+    "i-toast": "./dist/toast/index",
+    "i-drawer": "./dist/drawer/index",
+    "i-collapse": "./dist/collapse/index",
+    "i-collapse-item": "./dist/collapse-item/index",
 
 
-    
+    "van-button": "@vant/weapp/button/index", 
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "van-transition": "@vant/weapp/transition/index"
+
 }
 
 

@@ -1,0 +1,14 @@
+var dateFormatStr = function (dateStr) {
+  return dateStr.replace('T', ' ').split(".")[0]
+}
+var moneyFormat = function (money) {
+  return money.toFixed(2);
+}
+ 
+/*
+ * 导出
+ */
+module.exports = {
+  dateFormatStr: dateFormatStr,
+  moneyFormat: moneyFormat
+}

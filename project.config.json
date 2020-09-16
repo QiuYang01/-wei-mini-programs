@@ -6,7 +6,7 @@
 	},
 	"setting": {
 		"urlCheck": true,
-		"es6": true,
+		"es6": false,
 		"enhance": false,
 		"postcss": true,
 		"preloadBackgroundData": false,
@@ -67,6 +67,20 @@
 		"miniprogram": {
 			"current": -1,
 			"list": [
+				{
+					"id": -1,
+					"name": "pages/searchword/searchword",
+					"pathName": "pages/searchword/searchword",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/usermain/usermain",
+					"pathName": "pages/usermain/usermain",
+					"query": "",
+					"scene": null
+				},
 				{
 					"id": -1,
 					"name": "pages/searchword/searchword",

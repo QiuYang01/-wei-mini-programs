@@ -1,0 +1,23 @@
+{
+  "name": "translate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "@vant/weapp": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QiuYang01/translate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QiuYang01/translate/issues"
+  },
+  "homepage": "https://github.com/QiuYang01/translate#readme"
+}
