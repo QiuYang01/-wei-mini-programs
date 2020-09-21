@@ -1,0 +1,8 @@
+.my-loading-class {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  margin-top: 30vh;
+  text-align: center;
+  z-index: 2020;
+}

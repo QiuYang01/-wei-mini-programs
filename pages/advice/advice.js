@@ -11,6 +11,7 @@ Page({
   },
 
   submit: function(e) {
+    console.log(this.data)
     let that = this;
     if(!this.data.advice || !this.data.username){
       wx.showToast({title: '请填写完整哦',icon: 'none',duration: 2000})

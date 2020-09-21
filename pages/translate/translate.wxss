@@ -18,3 +18,9 @@
   text-align: left;
   
 }
+/* 输入框中placehold样式 */
+.place-holder {
+  font-size: 16px;
+  font-weight:400!important;
+  padding-top: 5px;
+  }

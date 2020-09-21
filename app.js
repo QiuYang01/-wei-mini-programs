@@ -1,19 +1,5 @@
 //app.js
-
-wx.showShareMenu({
-  withShareTicket: true,
-  menus: ['shareAppMessage', 'shareTimeline'],
-  success:function(){
-    // wx.showToast({
-    //   title: '成功',
-    //   icon: 'success',
-    //   duration: 2000
-    //   })
-  },
-  fail:function(){
-   
-  }
-}),
+  
 //app.js
 App({
   onLaunch: function () {

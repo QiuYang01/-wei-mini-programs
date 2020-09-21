@@ -25,6 +25,8 @@ Page({
     searchlog:[],
     //是否收藏 0否 其他是
     checkhasstart:0,
+    //显示正在加载
+    loading:false
   },
 //清除的函数
 clearfun: function(e){
@@ -37,9 +39,9 @@ clearfun: function(e){
 //播放的函数
 paly :function(e){
 console.log(e.currentTarget.dataset.url)
-const innerAudioContext = wx.createInnerAudioContext()
+const BackgroundAudioManager = wx.createInnerAudioContext()
 innerAudioContext.autoplay = true
-innerAudioContext.src = e.currentTarget.dataset.url
+BackgroundAudioManager.src = e.currentTarget.dataset.url
 innerAudioContext.onPlay(() => {
  // console.log('开始播放')
 })
@@ -166,8 +168,10 @@ getallstartword:function(){
 
 //搜索
 searchfun: function (e) {
-  this.setData({  //图标变为未收藏
+  this.setData({  //图标变为未收藏 搜索结果置空 搜索图标
     checkhasstart:0,
+    result:{},
+    loading:true
   })
   if(!this.data.originalData){
     wx.showToast({
@@ -188,7 +192,7 @@ searchfun: function (e) {
     data: {word:this.data.originalData},
   success: function (res) {
    if(res.data.code==200){
-    that.setData({ result : res.data.data }) 
+    that.setData({ result : res.data.data,loading:false }) 
     wx.showToast({ title: '查找成功', icon: 'none', duration: 1500 });
     //调用云函数进行保存搜索记录
     wx.cloud.callFunction({

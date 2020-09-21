@@ -5,6 +5,7 @@ view相当于div
 chexkbox 复选框
  -->
  <van-notice-bar left-icon="volume-o" text="在这里进行查词，输入英文单词，点击搜索图标进行搜索，完成后可点击五角星收藏，点击时钟图标可查看历史搜索记录" />
+ <loading wx:if="{{loading}}" size="24px" text="正在搜索中..." ></loading>
  <!-- 头部 -->
 <view class="headtitle" style="border-bottom:0px solid #ccc; display: flex; padding:5px 0 ">
   <view style=" flex: 3;text-align:center; ">英文</view>

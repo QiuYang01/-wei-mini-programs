@@ -1,0 +1,2 @@
+<!-- 封装的loading组件 传入大小size 和提示内容text-->
+<van-loading size="{{size}}" color="#000" class="my-loading-class" type="spinner" vertical>{{text}}</van-loading>

@@ -5,12 +5,15 @@ Page({
   data: {
     //收藏的单词
     starword:[],
-    activeNames: ['1']
+    activeNames: ['1'],
+    loading:true,
   },
 //调用云函数获取收藏的单词
 getallstartword:function(){
+  this.setData({
+    loading:true
+  })
   var _this = this;
-  //调用云函数进行收藏
   wx.cloud.callFunction({
     name: 'startword',
     data: {
@@ -21,6 +24,7 @@ getallstartword:function(){
     console.log(res.result);
     _this.setData({
       starword:res.result.data,
+      loading:false
     })
   })
 },

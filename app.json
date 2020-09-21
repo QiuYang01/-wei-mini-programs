@@ -23,7 +23,8 @@
     "pages/rainbowpi/rainbowpi",
     "pages/game/game",
     "pages/logs/logs",
-    "pages/usermain/usermain"
+    "pages/usermain/usermain",
+    "pages/loading/loading"
   ],
   "window":{
     "navigationBarBackgroundColor": "#0000cF", 

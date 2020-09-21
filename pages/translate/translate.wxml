@@ -15,8 +15,6 @@
 
  </view>
 
-
-
  <view class="right">
  <textarea placeholder-class="place-holder" placeholder="请输入" bindconfirm="translate" bindblur="translate" model:value="{{originword}}" auto-focus="true" style="height: 10vh;width:80%;border:1px solid red;border-radius:10px;padding:0 10px" />
    <view bindtap="translate" style="text-align:center"><i-icon type="unfold"  size="30"/></view>

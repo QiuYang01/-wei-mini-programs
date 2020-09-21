@@ -1,5 +1,17 @@
-var dateFormatStr = function (dateStr) {
-  return dateStr.replace('T', ' ').split(".")[0]
+var dateFormatStr = function (dateStr) {  //时间格式化函数 wxml调用先<wxs src="../../utils/filter.wxs" module="filter" /> 再filter.dateFormatStr(word.time)
+  var date = getDate(dateStr);
+  var year = date.getFullYear();
+  var month = date.getMonth()+1;
+  month = month.toString().length==1 ? "0"+month : month;
+  var day = date.getDate();
+  day = day.toString().length==1 ? "0"+day : day;
+  var hour = date.getHours();
+  hour = hour.toString().length==1 ? "0"+hour : hour;
+  var minute = date.getMinutes();
+  minute = minute.toString().length==1 ? "0"+minute : minute;
+  var second = date.getSeconds();
+  second = second.toString().length==1 ? "0"+second : second;
+  return year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second;
 }
 var moneyFormat = function (money) {
   return money.toFixed(2);

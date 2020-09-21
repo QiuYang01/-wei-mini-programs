@@ -5,42 +5,43 @@
   <van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
 </view> -->
 <van-notice-bar left-icon="volume-o" text="本页面显示的是在查词后点击小五角心收藏的单词" />
-
-<van-empty wx:if="{{starword.length==0}}" description="暂无收藏，请先查单词进行收藏" />
-
-<van-collapse wv:else accordion  value="{{ activeNames }}" bind:change="onChange">
-  <van-collapse-item   wx:for="{{starword}}" wx:for-index="idx" wx:for-item="word" wx:key="idx" name="{{idx}}">
-  <view slot="title" style="text-align: justify;">
-    <text style="font-weight:700;font-size:1.2em">{{word.result.original}}</text>
-    <text style="float:right;font-size:0.8em">{{filter.dateFormatStr(word.time)}}</text>
-  </view>
-  <view style="padding:0px 5px 20px 5px">
-    <view style="font-size:20px;font-family:'楷体';font-weight:700" wx:if="{{word.result.phoneticEnglandUrl !=null}}">
-      {{word.result.original}}
-      <van-button style="float:right" type="danger" size="mini" bindtap="cancelstar" data-_id="{{word._id}}">取消收藏</van-button>
-      <!-- <i-icon wx:if="{{checkhasstart==0}}" type="collection" bindtap="startword" size="24"/> 
-      <i-icon wx:else type="collection_fill" size="24" color="#80848f"/> -->
+<loading wx:if="{{loading}}" size="30px" text="加载中..." ></loading>
+<view wx:else>
+  <van-empty wx:if="{{starword.length==0}}" description="暂无收藏，请先查单词进行收藏" />
+  <van-collapse wx:else accordion  value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item   wx:for="{{starword}}" wx:for-index="idx" wx:for-item="word" wx:key="idx" name="{{idx}}">
+    <view slot="title" style="text-align: justify;">
+      <text style="font-weight:700;font-size:1.2em">{{word.result.original}}</text>
+      <text style="float:right;font-size:0.8em">{{filter.dateFormatStr(word.time)}}</text>
     </view>
-    <view>
-    <view style="display: inline;" wx:if="{{word.result.phoneticEnglandUrl !=null}}" bindtap="paly"  data-url="{{word.result.phoneticEnglandUrl}}">
-    英<i-icon type="systemprompt" size="18" /></view>
-    <view  style="display: inline;margin-left:15px" wx:if="{{word.result.phoneticAmericanUrl !=null}}" bindtap="paly"  data-url="{{word.result.phoneticAmericanUrl}}">美<i-icon size="18" type="systemprompt" /></view>
-    </view>
-    <!-- 词性 -->
-    <view >
-      <view wx:for="{{word.result.wordPartListMap}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
-        <text style="margin-right:5px">{{item.a}} </text>
-        <text >{{item.b}}</text>
+    <view style="padding:0px 5px 20px 5px">
+      <view style="font-size:20px;font-family:'楷体';font-weight:700" wx:if="{{word.result.phoneticEnglandUrl !=null}}">
+        {{word.result.original}}
+        <van-button style="float:right" type="danger" size="mini" bindtap="cancelstar" data-_id="{{word._id}}">取消收藏</van-button>
+        <!-- <i-icon wx:if="{{checkhasstart==0}}" type="collection" bindtap="startword" size="24"/> 
+        <i-icon wx:else type="collection_fill" size="24" color="#80848f"/> -->
+      </view>
+      <view>
+      <view style="display: inline;" wx:if="{{word.result.phoneticEnglandUrl !=null}}" bindtap="paly"  data-url="{{word.result.phoneticEnglandUrl}}">
+      英<i-icon type="systemprompt" size="18" /></view>
+      <view  style="display: inline;margin-left:15px" wx:if="{{word.result.phoneticAmericanUrl !=null}}" bindtap="paly"  data-url="{{word.result.phoneticAmericanUrl}}">美<i-icon size="18" type="systemprompt" /></view>
+      </view>
+      <!-- 词性 -->
+      <view >
+        <view wx:for="{{word.result.wordPartListMap}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+          <text style="margin-right:5px">{{item.a}} </text>
+          <text >{{item.b}}</text>
+        </view>
       </view>
     </view>
-  </view>
-  <!-- 例句 -->
-  <view style="font-size:1.0em;font-weight:700">例句</view>
-  <view style="font-size:14px;padding: 0 5px 10px 5px" wx:if="{{word.result.exampleListMap !=null}}">
-    <view wx:for="{{word.result.exampleListMap}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
-      <view style="margin-top:10px;font-weight:600">{{item.a}} </view>
-      <view >{{item.b}}</view>
+    <!-- 例句 -->
+    <view style="font-size:1.0em;font-weight:700">例句</view>
+    <view style="font-size:14px;padding: 0 5px 10px 5px" wx:if="{{word.result.exampleListMap !=null}}">
+      <view wx:for="{{word.result.exampleListMap}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+        <view style="margin-top:10px;font-weight:600">{{item.a}} </view>
+        <view >{{item.b}}</view>
+      </view>
     </view>
-  </view>
-  </van-collapse-item>
-</van-collapse>
+    </van-collapse-item>
+  </van-collapse>
+</view>
