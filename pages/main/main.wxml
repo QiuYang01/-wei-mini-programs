@@ -1,11 +1,10 @@
 
 <view animation="{{animationData}}" style="" >
-<i-card style="margin:20px;"  bindtap="tostartword" title="" extra="我的收藏" thumb="https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-    <view style="font-size:0.8em" slot="content">查单词后收藏的单词在这里面显示。</view>
+<i-card style="margin:20px;"  bindtap="toplayaudio" title="" extra="在线点读" thumb="https://images.pexels.com/photos/1337753/pexels-photo-1337753.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    <view style="font-size:0.8em" slot="content">在线点读功能，通过输入或手写不认识的文字，程序会朗读处目标文字，以帮助用户识字。</view>
     <!-- <view slot="footer">尾部内容</view> -->
 </i-card>
 </view>
-
 <view animation="{{animationData}}" style="" >
 <i-card style="margin:20px;"  bindtap="tosearchword" title="" extra="查单词" thumb="https://images.pexels.com/photos/3769697/pexels-photo-3769697.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
     <view style="font-size:0.8em" slot="content">在线免费查单词，可获取单词发音、释义及例句，无次数限制。</view>
@@ -13,6 +12,12 @@
 </i-card>
 </view>
 
+<view animation="{{animationData}}" style="" >
+<i-card style="margin:20px;"  bindtap="tostartword" title="" extra="我的收藏" thumb="https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    <view style="font-size:0.8em" slot="content">查单词后收藏的单词在这里面显示。</view>
+    <!-- <view slot="footer">尾部内容</view> -->
+</i-card>
+</view>
 
 <view animation="{{animationData}}"  >
     <i-card animation="{{animationData}}"  style="margin:20px" bindtap="totranslate" title="" extra="翻译" thumb="https://images.pexels.com/photos/267669/pexels-photo-267669.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">

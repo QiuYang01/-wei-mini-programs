@@ -6,6 +6,11 @@ Page({
    */
   data: {
     animationData: {} //动画
+  },  
+  toplayaudio:function(){
+    wx.navigateTo({
+      url: '../playaudio/playaudio'
+    })
   },
   tostartword:function(){
     wx.navigateTo({

@@ -1,0 +1,10 @@
+<textarea bindblur="playaudio" model:value="{{currentText}}" placeholder="请在此处输入需要朗读的文字" class="input" />
+<button bindtap="playaudio" type="primary" style=" margin-bottom: 3vh;">朗读 </button>
+
+<audio src="{{audioSrc}}" id="myAudio"  ></audio>
+<view class="tiipListItem"  wx:for="{{provideChoiceTextList}}" wx:for-item="item" wx:key="item">
+  <text bindtap="choiceText" data-text="{{item.text}}">{{item.text}}</text>
+</view>
+<!-- <textarea model:value="{{addText}}" class="input" ></textarea>
+<button bindtap="add">添加</button> -->
+

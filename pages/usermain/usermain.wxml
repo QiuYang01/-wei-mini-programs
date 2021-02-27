@@ -4,6 +4,7 @@
 <!-- <view>
   <van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
 </view> -->
+<canvas id="canvas" width="200" height="150" style="border:1px solid silver;"></canvas>
 <van-notice-bar left-icon="volume-o" text="本页面显示的是在查词后点击小五角心收藏的单词" />
 <loading wx:if="{{loading}}" size="30px" text="加载中..." ></loading>
 <view wx:else>

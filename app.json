@@ -2,8 +2,12 @@
   "cloud":true,
   "plugins": {
     "routePlan": {
-      "version": "1.0.8",
+      "version": "1.0.12",
       "provider": "wx50b5593e81dd937a"
+    },
+    "WechatSI": {  
+      "version": "0.3.4",
+      "provider": "wx069ba97219f66d99"
     }
   },
   "permission": {
@@ -24,8 +28,10 @@
     "pages/game/game",
     "pages/logs/logs",
     "pages/usermain/usermain",
-    "pages/loading/loading"
+    "pages/loading/loading",
+    "pages/playaudio/playaudio"
   ],
+  "requiredBackgroundModes": ["audio", "location"],
   "window":{
     "navigationBarBackgroundColor": "#0000cF", 
     "navigationBarTitleText": "",

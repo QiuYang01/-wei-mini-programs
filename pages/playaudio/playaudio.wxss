@@ -1,0 +1,18 @@
+/* pages/playaudio/playaudio.wxss */
+.input {
+  padding: 10px 4px;
+  height: 10vh;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0 auto;
+  /* margin-top: 2vh; */
+ 
+}
+.tiipListItem {
+  padding: 2px 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px;
+  display: inline-block;
+}
