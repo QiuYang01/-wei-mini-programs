@@ -7,6 +7,11 @@ Page({
   data: {
     animationData: {} //动画
   },  
+  to2048:function(){
+    wx.navigateTo({
+      url: '../2048/2048'
+    })
+  },
   toplayaudio:function(){
     wx.navigateTo({
       url: '../playaudio/playaudio'

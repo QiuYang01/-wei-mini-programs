@@ -1,7 +1,7 @@
 
 <wxs src="../../utils/filter.wxs" module="filter" />
 <!-- 我的收藏单词 -->
-<!-- <view>
+<!-- <view> 
   <van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
 </view> -->
 <canvas id="canvas" width="200" height="150" style="border:1px solid silver;"></canvas>

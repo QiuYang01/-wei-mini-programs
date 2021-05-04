@@ -1,4 +1,4 @@
-var dateFormatStr = function (dateStr) {  //时间格式化函数 wxml调用先<wxs src="../../utils/filter.wxs" module="filter" /> 再filter.dateFormatStr(word.time)
+var dateFormatStr = function (dateStr) {  //时间格式化函数 wxml调用先<wxs src="../../utils/filter.wxs" module="filter" /> 再filter.dateFormatStr(word.time) 
   var date = getDate(dateStr);
   var year = date.getFullYear();
   var month = date.getMonth()+1;

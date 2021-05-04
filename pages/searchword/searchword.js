@@ -11,6 +11,7 @@ wx.showShareMenu({
 
   }
 }),
+
 Page({
 
   /**
@@ -39,9 +40,10 @@ clearfun: function(e){
 //播放的函数
 paly :function(e){
 console.log(e.currentTarget.dataset.url)
-const BackgroundAudioManager = wx.createInnerAudioContext()
+const innerAudioContext = wx.createInnerAudioContext()
+// const innerAudioContext = wx.createInnerAudioContext()
 innerAudioContext.autoplay = true
-BackgroundAudioManager.src = e.currentTarget.dataset.url
+innerAudioContext.src = e.currentTarget.dataset.url
 innerAudioContext.onPlay(() => {
  // console.log('开始播放')
 })
@@ -186,7 +188,7 @@ searchfun: function (e) {
     console.log(that.data);
     this.data.result= {};
   wx.request({
-    url: 'https://xcx.gnnu.work/jsseaword',
+    url: 'http://127.0.0.1:8080/jsseaword',
     header: { "Content-Type": "application/x-www-form-urlencoded" },
     method: "POST",
     data: {word:this.data.originalData},

@@ -29,7 +29,8 @@
     "pages/logs/logs",
     "pages/usermain/usermain",
     "pages/loading/loading",
-    "pages/playaudio/playaudio"
+    "pages/playaudio/playaudio",
+    "pages/2048/2048"
   ],
   "requiredBackgroundModes": ["audio", "location"],
   "window":{
