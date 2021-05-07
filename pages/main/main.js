@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    animationData: {} //动画
+    animationData: {}, //动画
+    show:false, //是否展示
   },  
   to2048:function(){
     wx.navigateTo({
@@ -61,7 +62,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //请求云函数查询数据库 是否展示
+    wx.cloud.callFunction({
+      name: 'show',  
+    }) 
+    .then(res => {
+      // console.log(res.result.data.show);
+      this.setData({
+        show:res.result.data.show
+      })
+    })
   },
 
   /**

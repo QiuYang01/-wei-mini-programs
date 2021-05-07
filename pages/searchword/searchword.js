@@ -5,13 +5,11 @@ wx.showShareMenu({
   withShareTicket: true,
   menus: ['shareAppMessage', 'shareTimeline'],
   success:function(){
-    
   },
   fail:function(){
-
   }
-}),
-
+})
+const app = getApp()
 Page({
 
   /**
@@ -32,14 +30,14 @@ Page({
 //清除的函数
 clearfun: function(e){
   var that = this;
-  console.log(e);
+  // console.log(e);
   that.setData({
     result : {}
   }) 
 },
 //播放的函数
 paly :function(e){
-console.log(e.currentTarget.dataset.url)
+// console.log(e.currentTarget.dataset.url)
 const innerAudioContext = wx.createInnerAudioContext()
 // const innerAudioContext = wx.createInnerAudioContext()
 innerAudioContext.autoplay = true
@@ -48,14 +46,14 @@ innerAudioContext.onPlay(() => {
  // console.log('开始播放')
 })
 innerAudioContext.onError((res) => {
-  console.log(res.errMsg)
-  console.log(res.errCode)
+  // console.log(res.errMsg)
+  // console.log(res.errCode)
 })
 },
 
 copy: function (e) {
   var that = this;
-  console.log("长按触发");
+  // console.log("长按触发");
     wx.setClipboardData({
     data: that.data.result.wordPartListMap,
       success: function (res) {
@@ -68,7 +66,7 @@ copy: function (e) {
 
 //调用云函数获取搜索记录
 getsearchlog:function(){
-  console.log("调用云函数获取搜索记录")
+  // console.log("调用云函数获取搜索记录")
   wx.cloud.callFunction({
     name: 'searchlog',
     data: {
@@ -76,7 +74,7 @@ getsearchlog:function(){
     },
   }) 
   .then(res => {
-    console.log(res.result);
+    // console.log(res.result);
     this.setData({
       searchlog:res.result.data
     })
@@ -96,7 +94,7 @@ grawershow:function(){
 
 //点击历史进行搜索
 getlogwordseach:function(event){
-  console.log(event.currentTarget.dataset.word);
+  // console.log(event.currentTarget.dataset.word);
   this.setData({
     originalData:event.currentTarget.dataset.word
   })
@@ -107,7 +105,7 @@ getlogwordseach:function(event){
 //调用云函数检查是否已经收藏
 checkhasstart:function(word){
   var _this = this;
-  console.log("检查是否已经收藏")
+  // console.log("检查是否已经收藏")
   wx.cloud.callFunction({
     name: 'startword',
     data: {
@@ -116,7 +114,7 @@ checkhasstart:function(word){
     },
   }) 
   .then(res => {
-    console.log(res.result);
+    // console.log(res.result);
     _this.setData({ //得到是否收藏
       checkhasstart:res.result.total
     })
@@ -125,7 +123,7 @@ checkhasstart:function(word){
 
 //调用云函数收藏单词
 startword:function(){
-  console.log(this.data.result); 
+  // console.log(this.data.result); 
   var _this = this;
   //调用云函数进行收藏
   wx.cloud.callFunction({
@@ -136,7 +134,7 @@ startword:function(){
     },
   }) 
   .then(res => {
-    console.log(res.result);
+    // console.log(res.result);
     //收藏完成后把收藏的星变色
     _this.setData({
       checkhasstart:1
@@ -184,11 +182,11 @@ searchfun: function (e) {
     return
   }
     var that = this;
-    console.log("开始查询");
-    console.log(that.data);
+    // console.log("开始查询");
+    // console.log(that.data);
     this.data.result= {};
   wx.request({
-    url: 'http://127.0.0.1:8080/jsseaword',
+    url: `${app.globalData.url}/jsseaword`,
     header: { "Content-Type": "application/x-www-form-urlencoded" },
     method: "POST",
     data: {word:this.data.originalData},
@@ -205,7 +203,7 @@ searchfun: function (e) {
       },
     }) 
     .then(res => {
-      console.log(res.result);
+      // console.log(res.result);
     })
      //调用云函数进行保存搜索记录结束
      //检查是否已经收藏 给收藏赋值

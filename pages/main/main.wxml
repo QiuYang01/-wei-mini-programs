@@ -1,38 +1,40 @@
 
-<view animation="{{animationData}}" style="" >
-<i-card style="margin:20px;"  bindtap="to2048" title="" extra="2048" thumb="https://gimg0.baidu.com/gimg/src=https%3A%2F%2Fgameplus-platform.cdn.bcebos.com%2Fgameplus-platform%2Fupload%2Ffile%2Fsource%2F8b568912e6f52e3b0f16eb0c563d9abf.jpeg&app=2000&size=f130,172&n=0&g=0n&q=85&fmt=jpeg?sec=0&t=b9cd8b3e99a4efea1d47f231b8a35571">
-    <view style="font-size:0.8em" slot="content">小程序版2048。</view>
-    <!-- <view slot="footer">尾部内容</view> -->
-</i-card>
-</view>
-<view animation="{{animationData}}" style="" >
-<i-card style="margin:20px;"  bindtap="toplayaudio" title="" extra="在线点读" thumb="https://images.pexels.com/photos/1337753/pexels-photo-1337753.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-    <view style="font-size:0.8em" slot="content">在线点读功能，通过输入或手写不认识的文字，程序会朗读处目标文字，以帮助用户识字。</view>
-    <!-- <view slot="footer">尾部内容</view> -->
-</i-card>
-</view>
-<view animation="{{animationData}}" style="" >
-<i-card style="margin:20px;"  bindtap="tosearchword" title="" extra="查单词" thumb="https://images.pexels.com/photos/3769697/pexels-photo-3769697.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-    <view style="font-size:0.8em" slot="content">在线免费查单词，可获取单词发音、释义及例句，无次数限制。</view>
-    <!-- <view slot="footer">尾部内容</view> -->
-</i-card>
+<view animation="{{animationData}}"  wx:if="{{show}}" class="box-shadow" >
+    <i-card style="margin:20px;"  bindtap="to2048" title="" extra="2048" thumb="https://gimg0.baidu.com/gimg/src=https%3A%2F%2Fgameplus-platform.cdn.bcebos.com%2Fgameplus-platform%2Fupload%2Ffile%2Fsource%2F8b568912e6f52e3b0f16eb0c563d9abf.jpeg&app=2000&size=f130,172&n=0&g=0n&q=85&fmt=jpeg?sec=0&t=b9cd8b3e99a4efea1d47f231b8a35571">
+        <view style="font-size:0.8em" slot="content">小程序版2048。</view>
+        <!-- <view slot="footer">尾部内容</view> -->
+    </i-card>
 </view>
 
-<view animation="{{animationData}}" style="" >
-<i-card style="margin:20px;"  bindtap="tostartword" title="" extra="我的收藏" thumb="https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-    <view style="font-size:0.8em" slot="content">查单词后收藏的单词在这里面显示。</view>
-    <!-- <view slot="footer">尾部内容</view> -->
-</i-card>
+<view animation="{{animationData}}" class="box-shadow"  >
+    <i-card  style="margin:20px;"  bindtap="tosearchword" title="" extra="查单词" thumb="https://images.pexels.com/photos/3769697/pexels-photo-3769697.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+        <view style="font-size:0.8em" slot="content">在线免费查单词，可获取单词发音、释义及例句，无次数限制。</view>
+        <!-- <view slot="footer">尾部内容</view> -->
+    </i-card>
 </view>
 
-<view animation="{{animationData}}"  >
+<view animation="{{animationData}}" class="box-shadow"  >
+    <i-card style="margin:20px;"  bindtap="tostartword" title="" extra="我的收藏" thumb="https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+        <view style="font-size:0.8em" slot="content">查单词后收藏的单词在这里面显示。</view>
+        <!-- <view slot="footer">尾部内容</view> -->
+    </i-card>
+</view>
+
+<view animation="{{animationData}}" class="box-shadow" >
+    <i-card style="margin:20px;"  bindtap="toplayaudio" title="" extra="在线点读" thumb="https://images.pexels.com/photos/1337753/pexels-photo-1337753.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+        <view style="font-size:0.8em" slot="content">在线点读功能，通过输入或手写不认识的文字，程序会朗读处目标文字，以帮助用户识字。</view>
+        <!-- <view slot="footer">尾部内容</view> -->
+    </i-card>
+</view>
+
+<view animation="{{animationData}}" class="box-shadow" >
     <i-card animation="{{animationData}}"  style="margin:20px" bindtap="totranslate" title="" extra="翻译" thumb="https://images.pexels.com/photos/267669/pexels-photo-267669.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
         <view style="font-size:0.8em" slot="content">支持28种语言互译。</view>
         <!-- <view slot="footer">尾部内容</view> -->
     </i-card>
 </view>
 
-<view animation="{{animationData}}"  >
+<view animation="{{animationData}}"  class="box-shadow">
     <i-card animation="{{animationData}}"  style="margin:20px" bindtap="tomap" title="" extra="导航" thumb="https://images.pexels.com/photos/68704/pexels-photo-68704.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
         <view style="font-size:0.8em" slot="content">提供路线规划，选择出发点和目的地，生成推荐驾车、公交、步行路线规划。</view>
         <!-- <view slot="footer">尾部内容</view> -->
@@ -51,7 +53,7 @@
 </i-card>
 </view> -->
 
-<view animation="{{animationData}}"  >
+<view animation="{{animationData}}" class="box-shadow" >
 <i-card style="margin:20px" bindtap="torainbowpi" title="" extra="彩虹屁" thumb="https://images.pexels.com/photos/2013809/pexels-photo-2013809.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
     <view style="font-size:0.8em" slot="content">好多好多彩虹 屁</view>
     <!-- <view slot="footer">尾部内容</view> -->
@@ -59,7 +61,7 @@
 </view>
 
 
-<view animation="{{animationData}}"  >
+<view animation="{{animationData}}"  class="box-shadow">
     <i-card animation="{{animationData}}"  style="margin:20px" bindtap="toadvice" title="" extra="提建议" thumb="https://images.pexels.com/photos/255527/pexels-photo-255527.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
         <view style="font-size:0.8em" slot="content">请给我们提一些建议和意见</view>
         <!-- <view slot="footer">尾部内容</view> -->

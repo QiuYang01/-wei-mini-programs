@@ -22,7 +22,7 @@ Page({
   },
   //选择
   choiceText:function(e){
-    console.log(e);
+    // console.log(e);
     this.setData({
       currentText:e.currentTarget.dataset.text
     })
@@ -37,21 +37,25 @@ Page({
       content: this.data.currentText,       
       tts: true, // 需要合成语音       
       success: ( res ) =>{   
-        console.log(res.filename);
+        // console.log(res.filename);
         this.setData ( {
           audioSrc:res.filename
         } )     
-        console.log("src",this.data.audioSrc)
+        // console.log("src",this.data.audioSrc)
         this.audioCtx.play()  
         },    
         fail: function(res) {
-          console.log("fail tts", res)
+          // console.log("fail tts", res)
         } 
       } )   
     },
   //调用云函添加
   add:function(){
-    console.log("开始add")
+    // console.log("开始add")
+    if(!this.data.addText){ 
+      wx.showToast({ title: '请输入！！！', icon: 'none', duration: 500 });
+      return ;
+    }
     //调用云函数添加
     var that = this;
     wx.cloud.callFunction({
@@ -63,11 +67,12 @@ Page({
     }) 
     .then(res => {
       console.log(res.result);
+      this.getAll();
     }) 
   },
   //调用云函数查询
   getAll:function(){
-    console.log("开始getAll")
+    // console.log("开始getAll")
     //调用云函数添加
     var that = this;
     wx.cloud.callFunction({
@@ -77,7 +82,7 @@ Page({
       },
     }) 
     .then(res => {
-      console.log(res.result);
+      // console.log(res.result);
       that.setData({
         provideChoiceTextList:res.result.data
       })
