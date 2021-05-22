@@ -17,7 +17,7 @@ chexkbox 复选框
 <!-- 输入框 -->
 <view>
   <view style="display:flex;padding: 10px ;background-color: #fff;border:1px solid #ccc;box-shadow: 0px 2px 2px rgba(0,0,0,0.17);">
-    <textarea placeholder-class="place-holder" placeholder="请输入要查找的单词" bindconfirm="searchfun()"  model:value="{{originalData}}" style="height:4em;margin-right:0px" />
+    <textarea placeholder-class="place-holder" placeholder="请输入要查找的单词" bindinput="bindinput" bindconfirm="searchfun"  model:value="{{originalData}}" style="height:4em;margin-right:0px" />
     <!-- 搜索和历史记录按钮 -->
     <view style="z-index: 5;text-align:right">
         <i-icon  bindtap="searchfun" style="position:relative;top:-8px;" type="search" size="30" color="blue" />
@@ -39,9 +39,9 @@ chexkbox 复选框
 
 
 <!-- 原文发音和词性 -->
-<view style="font-size:16px;margin-top:10px;font-weight:700" wx:if="{{result.phoneticEnglandUrl !=null}}">释义</view>
+<!-- <view style="font-size:16px;margin-top:10px;font-weight:700;padding:0px 5px 0px 5px" wx:if="{{result.phoneticEnglandUrl !=null}}">释义</view> -->
 <!-- <text bindtap="getallstartword">获取</text> -->
-<view style="padding:0px 5px 20px 5px">
+<view style="padding:10px 5px 5px 5px">
   <view style="font-size:20px;font-family:'楷体';font-weight:700" wx:if="{{result.phoneticEnglandUrl !=null}}">
     {{result.original}}
     <!-- 收藏和取消 -->
@@ -64,7 +64,7 @@ chexkbox 复选框
 
 
 <!-- 例句 -->
-<view style="font-size:1.0em;font-weight:700" wx:if="{{result.exampleListMap !=null}}">例句</view>
+<!-- <view style="font-size:1.0em;font-weight:700" wx:if="{{result.exampleListMap !=null}}">例句</view> -->
 <view style="font-size:14px;padding: 0 5px 10px 5px" wx:if="{{result.exampleListMap !=null}}">
   <view wx:for="{{result.exampleListMap}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
     <view style="margin-top:10px;font-weight:600">{{item.a}} </view>

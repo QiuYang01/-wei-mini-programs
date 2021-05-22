@@ -30,7 +30,10 @@
     "pages/usermain/usermain",
     "pages/loading/loading",
     "pages/playaudio/playaudio",
-    "pages/2048/2048"
+    "pages/2048/2048",
+    "pages/momo/momo",
+    "pages/momo/chapter/chapter",
+    "pages/momo/voc/voc"
   ],
   "requiredBackgroundModes": ["audio", "location"],
   "window":{

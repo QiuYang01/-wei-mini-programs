@@ -1,0 +1,5 @@
+<view class="nav">目录</view>
+<view class="chaptercontainer" wx:for="{{chapterList}}" wx:for-item="chapter" wx:for-index="idx" wx:key="idx" 
+bindtap="tovoc" data-chapterId="{{chapter.id}}" data-bookId="{{chapter.bookId}}">
+  {{chapter.title}}
+</view>

@@ -165,6 +165,13 @@ getallstartword:function(){
     console.log(res.result);
   })
 },
+//监听输入框值的变化 
+bindinput: function(val){
+  // console.log(val.detail.value);
+  this.setData({
+    originalData:val.detail.value
+  })
+},
 
 //搜索
 searchfun: function (e) {
@@ -173,7 +180,7 @@ searchfun: function (e) {
     result:{},
     loading:true
   })
-  if(!this.data.originalData){
+  if(this.data.originalData===''){
     wx.showToast({
       title: '请输入完整',
       icon: 'none',
@@ -185,8 +192,9 @@ searchfun: function (e) {
     // console.log("开始查询");
     // console.log(that.data);
     this.data.result= {};
+    
   wx.request({
-    url: `${app.globalData.url}/jsseaword`,
+    url: 'https://xcx.gnnu.work/jsseaword',
     header: { "Content-Type": "application/x-www-form-urlencoded" },
     method: "POST",
     data: {word:this.data.originalData},
@@ -202,22 +210,22 @@ searchfun: function (e) {
         url:'savesearchlog'
       },
     }) 
-    .then(res => {
-      // console.log(res.result);
-    })
      //调用云函数进行保存搜索记录结束
      //检查是否已经收藏 给收藏赋值
      that.checkhasstart(res.data.data.original);
    }
    else {
+    that.setData({ result : res.data.data,loading:false }) 
     wx.showToast({ title: '服务器错误！', icon: 'none', duration: 1500 })
    }
 },
   fail:function(){
+    that.setData({ result : res.data.data,loading:false }) 
     wx.showToast({ title: '服务器错误！', icon: 'none', duration: 1500 })
   }
 })
 },
+
 
 
 
@@ -278,3 +286,4 @@ searchfun: function (e) {
 
   }
 })
+

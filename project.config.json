@@ -5,7 +5,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": false,
     "enhance": false,
     "postcss": true,
@@ -87,6 +87,25 @@
         {
           "name": "pages/playaudio/playaudio",
           "pathName": "pages/playaudio/playaudio",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/momo/momo",
+          "pathName": "pages/momo/momo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/momo/chapter/chapter",
+          "pathName": "pages/momo/chapter/chapter",
+          "query": "originalid=2164805",
+          "scene": null
+        },
+        {
+          "name": "pages/momo/voc/voc",
+          "pathName": "pages/momo/voc/voc",
+          "query": "chapterId=8523&bookId=2164805",
           "scene": null
         }
       ]

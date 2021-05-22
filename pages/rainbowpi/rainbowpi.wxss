@@ -7,6 +7,7 @@
   margin-top: 5vh;
   padding: 10px;
   border-radius: 10px;
+  min-height: 40vh;
   
 }
 .rainbowtitle {

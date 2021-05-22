@@ -1,0 +1,8 @@
+<loading wx:if="{{loading}}" size="24px" text="正在获取中..." ></loading>
+<view class="nav">书籍列表</view>
+<view class="bookcontainer" wx:for="{{bookList}}" wx:for-item="book" wx:for-index="idx" wx:key="idx" bindtap="tochapter" data-originalId="{{book.originalId}}">
+{{book.fullName}}
+<!-- {{book.author}} -->
+<!-- {{book.publisher}}
+{{book.version}} -->
+</view>

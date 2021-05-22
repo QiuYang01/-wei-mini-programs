@@ -37,6 +37,11 @@ Page({
     wx.navigateTo({
       url: '../translate/translate'
     })
+  }, 
+  tomomo:function(){
+    wx.navigateTo({
+      url: '../momo/momo'
+    })
   },
   tomap:function(){
     wx.navigateTo({

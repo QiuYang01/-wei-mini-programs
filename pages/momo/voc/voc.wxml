@@ -1,0 +1,42 @@
+<loading wx:if="{{loading}}" size="24px" text="正在获取中..." ></loading>
+<view>
+  <van-empty wx:if="{{vocList.length==0}}" description="暂无单词" />
+  <van-collapse wx:else accordion  value="{{ activeNames }}" bind:change="onChange" >
+    <van-collapse-item   wx:for="{{vocList}}" wx:for-index="idx" wx:for-item="voc" wx:key="idx" name="{{idx}}">
+     <!-- bindtap="searchfun" data-original="{{voc.vcVocabulary}}"-->
+    <view slot="title" style="text-align: justify;">
+      <text style="font-weight:700;font-size:1.2em">{{voc.vcVocabulary}}</text>
+    </view>
+    <view style="padding:10px 5px 5px 5px">
+  <view style="font-size:20px;font-family:'楷体';font-weight:700" wx:if="{{result.phoneticEnglandUrl !=null}}">
+    {{result.original}}
+    <!-- 收藏和取消 -->
+    <i-icon style="float:right;margin-right:10px" wx:if="{{checkhasstart==0}}" type="collection" bindtap="startword" size="28"/> 
+    <i-icon style="float:right;margin-right:10px" wx:else type="collection_fill"  size="28" color="#80848f"/>
+  </view>
+  <view>
+   <view style="display: inline;" wx:if="{{result.phoneticEnglandUrl !=null}}" bindtap="paly"  data-url="{{result.phoneticEnglandUrl}}">
+   英<i-icon type="systemprompt" size="18" /></view>
+   <view  style="display: inline;margin-left:15px" wx:if="{{result.phoneticAmericanUrl !=null}}" bindtap="paly"  data-url="{{result.phoneticAmericanUrl}}">美<i-icon size="18" type="systemprompt" /></view>
+  </view>
+  <!-- 词性 -->
+  <view >
+    <view wx:for="{{result.wordPartListMap}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+      <text style="margin-right:5px" >{{item.a}} </text>
+      <text >{{item.b}}</text>
+    </view>
+  </view>
+</view>
+<!-- 例句 -->
+<!-- <view style="font-size:1.0em;font-weight:700" wx:if="{{result.exampleListMap !=null}}">例句</view> -->
+<view style="font-size:14px;padding: 0 5px 10px 5px" wx:if="{{result.exampleListMap !=null}}">
+  <view wx:for="{{result.exampleListMap}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+    <view style="margin-top:10px;font-weight:600">{{item.a}} </view>
+    <view >{{item.b}}</view>
+  </view>
+</view>
+
+
+    </van-collapse-item>
+  </van-collapse>
+</view>

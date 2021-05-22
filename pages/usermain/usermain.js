@@ -63,7 +63,7 @@ paly :function(e){
 },
 
 onChange(event) {
-  console.log(event.detail)
+  // console.log(event.detail)
   this.setData({
     activeNames: event.detail,
   });
